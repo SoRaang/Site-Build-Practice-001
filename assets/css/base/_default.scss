@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
     font-family: 'SUIT';
@@ -32,7 +33,7 @@
     --fnt-xs: .5rem;
 
     --ff-sans-kr: 'SUIT', sans-serif;
-    --ff-sans-en: 'Cabin Condensed', sans-serif;
+    --ff-sans-en: 'Poppins', sans-serif;
     --ff-gothic-kr: '';
     --ff-gothic-en: 'Oswald', sans-serif;
     --ff-serif-kr: '';
@@ -54,7 +55,7 @@ body {
     min-height: 100vh;
     background-color: rgb(var(--clr-background));
     font-family: var(--ff-sans-kr);
-    color: rgba(var(--clr-text) / var(--opaq));
+    color: rgb(var(--clr-text) / var(--opaq));
     font-size: var(--fnt-md);
     word-break: keep-all;
 

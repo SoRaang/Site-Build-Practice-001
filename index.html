@@ -8,10 +8,25 @@
 
         <link rel="preload" as="font" type="font/woff2" crossorigin="" href="./assets/fonts/SUIT-Variable.woff2">
         <link rel="stylesheet" href="./assets/css/style.css">
+        <script src="https://kit.fontawesome.com/f67ce84ea1.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <div id="wrap">
+            <aside id="sideSNSLinks">
+                <a class="social-icons" href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a class="social-icons" href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a class="social-icons" href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </aside> <!-- #sideSNSLinks -->
+
             <header id="headPrimary">
                 <a href="/">
                     <h1 id="logoPrimary">
@@ -30,15 +45,15 @@
 
                             <ul class="nav-list-sub">
                                 <li class="nav-item-depth-1">
-                                    <a href="">Tourist</a>
+                                    <a href="#">Tourist</a>
                                 </li>
 
                                 <li class="nav-item-depth-1">
-                                    <a href="">Nature</a>
+                                    <a href="#">Nature</a>
                                 </li>
 
                                 <li class="nav-item-depth-1">
-                                    <a href="">Food & Drink</a>
+                                    <a href="#">Food & Drink</a>
                                 </li>
                             </ul>
                         </li>
@@ -48,15 +63,15 @@
 
                             <ul class="nav-list-sub">
                                 <li class="nav-item-depth-1">
-                                    <a href="">Ocean</a>
+                                    <a href="#">Ocean</a>
                                 </li>
 
                                 <li class="nav-item-depth-1">
-                                    <a href="">Mountain</a>
+                                    <a href="#">Mountain</a>
                                 </li>
 
                                 <li class="nav-item-depth-1">
-                                    <a href="">Sky</a>
+                                    <a href="#">Sky</a>
                                 </li>
                             </ul>
                         </li>
@@ -66,11 +81,11 @@
 
                             <ul class="nav-list-sub">
                                 <li class="nav-item-depth-1">
-                                    <a href="">VR</a>
+                                    <a href="#">VR</a>
                                 </li>
 
                                 <li class="nav-item-depth-1">
-                                    <a href="">Download</a>
+                                    <a href="#">Download</a>
                                 </li>
                             </ul>
                         </li>
@@ -80,11 +95,11 @@
 
                             <ul class="nav-list-sub">
                                 <li class="nav-item-depth-1">
-                                    <a href="">E-Mail</a>
+                                    <a href="#">E-Mail</a>
                                 </li>
 
                                 <li class="nav-item-depth-1">
-                                    <a href="">Contact</a>
+                                    <a href="#">Contact</a>
                                 </li>
                             </ul>
                         </li>
@@ -97,20 +112,51 @@
                     <source type="video/mp4" src="./assets/miscellaneous/intro-background.mp4">
                 </video>
 
-                <div id="heroParagraph">
-                    <p>Visit</p>
-                    <h1>Norway</h1>
+                <div class="inner-wrapper">
+                    <div id="heroParagraph">
+                        <p>Visit</p>
+                        <h1>Norway</h1>
+                    </div>
                 </div>
             </section> <!-- #secHero -->
 
-            <aside id="sideBooklet">
+            <aside id="sideBooklet" data-tooltip="Get your FREE guidebook today!">
+                <div class="booklet-image">
+                    <img src="./assets/images/booklet_0.jpg" alt="">
+                </div>
 
+                <div class="booklet-image">
+                    <img src="./assets/images/booklet_1.jpg" alt="">
+                </div>
             </aside> <!-- #sideBooklet -->
 
             <footer id="footPrimary">
                 Copyright © <span id="copyYear"></span> SoRaang All Rights Reserved.
             </footer> <!-- #footPrimary -->
         </div> <!-- #wrap -->
+
+        <dialog id="modalAskForm">
+            <header id="modalHeader">
+                <h2>Get a guidebook</h2>
+            </header>
+
+            <form id="frmAsk">
+                <input type="text" id="txtName" name="user-name" placeholder="받는 분 성함">
+                <input type="phone" id="txtPhone" name="user-phone" placeholder="연락처">
+                <input type="text" id="txtAddr1" name="main-address" placeholder="주소">
+                <input type="text" id="txtAddr2" name="sub-address" placeholder="나머지 주소">
+
+
+
+                <footer id="modalFooter">
+                    <button type="submit" id="btnModalSubmit" title="Submit">Submit</button>
+
+                    <button type="reset" id="btnModalClose" title="Close">Close</button>
+                </footer#>
+            </form> <!-- #frmAsk -->
+
+
+        </dialog> <!-- modalAskForm -->
 
         <script type="module" src="./assets/scripts/base.js"></script>
     </body>

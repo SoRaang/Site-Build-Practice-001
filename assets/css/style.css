@@ -10,6 +10,7 @@ Use a better box model (opinionated).
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin+Condensed:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 *,
 ::before,
 ::after {
@@ -278,7 +279,7 @@ summary {
   --fnt-sm: .6rem;
   --fnt-xs: .5rem;
   --ff-sans-kr: "SUIT", sans-serif;
-  --ff-sans-en: "Cabin Condensed", sans-serif;
+  --ff-sans-en: "Poppins", sans-serif;
   --ff-gothic-kr: "";
   --ff-gothic-en: "Oswald", sans-serif;
   --ff-serif-kr: "";
@@ -300,7 +301,7 @@ body {
   min-height: 100vh;
   background-color: rgb(var(--clr-background));
   font-family: var(--ff-sans-kr);
-  color: rgba(var(--clr-text)/var(--opaq));
+  color: rgb(var(--clr-text)/var(--opaq));
   font-size: var(--fnt-md);
   word-break: keep-all;
   overflow: overlay;
@@ -472,7 +473,22 @@ a:hover, a:focus, a:active {
   width: -moz-fit-content;
   width: fit-content;
   height: 100%;
+  transition: 0.5s;
   z-index: 50000;
+}
+#headPrimary:has(:hover) {
+  background-image: radial-gradient(circle at top left, rgb(var(--clr-tint-100)/0.25), rgb(var(--clr-max)/0.1), rgb(var(--clr-theme)/0.1));
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(0.4rem);
+          backdrop-filter: blur(0.4rem);
+  box-shadow: 0 0 1rem rgb(var(--clr-min)/0.2);
+}
+
+#logoPrimary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
 }
 
 #navPrimary {
@@ -495,6 +511,7 @@ a:hover, a:focus, a:active {
   width: 12rem;
   font-size: var(--fnt-xl);
   text-align: end;
+  text-shadow: 0.1rem 0.1rem rgb(var(--clr-min)/0.2);
 }
 .nav-item-depth-0:hover {
   background-color: rgb(var(--clr-theme));
@@ -591,6 +608,10 @@ a:hover, a:focus, a:active {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 20%);
   content: "";
 }
+#secHero > .inner-wrapper {
+  position: relative;
+  height: 100%;
+}
 
 #heroParagraph {
   position: absolute;
@@ -604,8 +625,9 @@ a:hover, a:focus, a:active {
 }
 #heroParagraph > p {
   margin-block-end: -1vmin;
-  font-family: var(--ff-gothic-en);
+  font-family: var(--ff-sans-en);
   font-size: 4vmin;
+  font-weight: 100;
   opacity: 0.75;
 }
 #heroParagraph > h1 {
@@ -622,6 +644,104 @@ a:hover, a:focus, a:active {
   opacity: 0.75;
   z-index: -50000;
   pointer-events: none;
+}
+
+#sideSNSLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: fixed;
+  inset-block-start: 2rem;
+  inset-inline-end: 2rem;
+  font-size: var(--fnt-title-sm);
+  z-index: 49999;
+}
+
+.social-icons {
+  opacity: 0.5;
+}
+.social-icons:hover {
+  opacity: 1;
+}
+
+#sideBooklet {
+  position: fixed;
+  inset-block-end: 1rem;
+  inset-inline-end: 1rem;
+}
+#sideBooklet::before {
+  display: block;
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-end: 2rem;
+  padding: 0.5rem 0.75rem;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 10rem;
+  background-color: rgb(var(--clr-min));
+  font-family: var(--ff-sans-en);
+  font-size: var(--fnt-sm);
+  text-transform: capitalize;
+  transition: 0.5s;
+  z-index: 1;
+  content: attr(data-tooltip);
+}
+#sideBooklet:hover::before {
+  inset-inline-end: 6rem;
+}
+#sideBooklet:hover .booklet-image {
+  scale: 1.2;
+}
+#sideBooklet:hover .booklet-image:first-child {
+  inset-block-end: 0.5rem;
+  inset-inline-end: 1rem;
+  rotate: 7.5deg;
+}
+#sideBooklet:hover .booklet-image:last-child {
+  inset-block-end: 1.5rem;
+  inset-inline-end: 4.5rem;
+  rotate: -12.5deg;
+}
+
+.booklet-image {
+  position: absolute;
+  width: 5rem;
+  height: 7.5rem;
+  border-radius: 0.1rem;
+  box-shadow: 0.25rem 0.75rem 1rem rgb(var(--clr-min)/0.75);
+  transform-origin: bottom right;
+  transition: all 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.booklet-image:first-child {
+  inset-block-end: 0.25rem;
+  inset-inline-end: 0.25rem;
+  rotate: 5deg;
+}
+.booklet-image:last-child {
+  inset-block-end: 0.75rem;
+  inset-inline-end: 0.5rem;
+  rotate: -5deg;
+}
+.booklet-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#modalAskForm {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 1rem;
+  width: 20rem;
+  border: 0;
+  outline: 0;
+}
+#modalAskForm::backdrop {
+  background-color: rgb(var(--clr-min)/0.75);
 }
 
 /* _mainPage.scss */

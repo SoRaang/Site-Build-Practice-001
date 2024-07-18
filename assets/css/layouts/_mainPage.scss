@@ -1,6 +1,6 @@
 /* _mainPage.scss */
 
-#secHero {
+#secHero { // 메인 히어로 섹션
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -12,9 +12,14 @@
         background-image: linear-gradient(to bottom, rgb(0 0 0 / .5), transparent 20%);
         content: '';
     }
+
+    > .inner-wrapper {
+        position: relative;
+        height: 100%;
+    }
 }
 
-#heroParagraph {
+#heroParagraph { // 메인 히어로 텍스트 컨테이너
     position: absolute;
     inset: 0;
     margin-block: auto;
@@ -25,8 +30,9 @@
 
     > p {
         margin-block-end: -1vmin;
-        font-family: var(--ff-gothic-en);
+        font-family: var(--ff-sans-en);
         font-size: 4vmin;
+        font-weight: 100;
         opacity: .75;
     }
 
@@ -36,7 +42,7 @@
     }
 }
 
-#bgMovie {
+#bgMovie { // 메인 배경 영상
     position: absolute;
     inset-inline: 0;
     margin-inline: auto;
@@ -45,6 +51,114 @@
     opacity: .75;
     z-index: -50000;
     pointer-events: none;
+}
+
+#sideSNSLinks { // 소셜 링크 사이드 바
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    inset-block-start: 2rem;
+    inset-inline-end: 2rem;
+    font-size: var(--fnt-title-sm);
+    z-index: 49999;
+}
+
+.social-icons {
+    opacity: .5;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#sideBooklet { // 메인 사이드 바
+    position: fixed;
+    inset-block-end: 1rem;
+    inset-inline-end: 1rem;
+
+    &::before {
+        display: block;
+        position: absolute;
+        inset-block-end: 1rem;
+        inset-inline-end: 2rem;
+        padding: .5rem .75rem;
+        width: max-content;
+        border-radius: 10rem;
+        background-color: rgb(var(--clr-min));
+        font-family: var(--ff-sans-en);
+        font-size: var(--fnt-sm);
+        text-transform: capitalize;
+        transition: .5s;
+        z-index: 1;
+        content: attr(data-tooltip);
+    }
+
+    &:hover {
+        &::before {
+            inset-inline-end: 6rem;
+        }
+
+        .booklet-image {
+            scale: 1.2;
+
+            &:first-child {
+                inset-block-end: .5rem;
+                inset-inline-end: 1rem;
+                rotate: 7.5deg;
+            }
+
+            &:last-child {
+                inset-block-end: 1.5rem;
+                inset-inline-end: 4.5rem;
+                rotate: -12.5deg;
+            }
+        }
+    }
+}
+
+.booklet-image {
+    position: absolute;
+    width: 5rem;
+    height: 7.5rem;
+    border-radius: .1rem;
+    box-shadow: .25rem .75rem 1rem rgb(var(--clr-min) / .75);
+    transform-origin: bottom right;
+    transition: all .5s;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:first-child {
+        inset-block-end: .25rem;
+        inset-inline-end: .25rem;
+        rotate: 5deg;
+    }
+
+    &:last-child {
+        inset-block-end: .75rem;
+        inset-inline-end: .5rem;
+        rotate: -5deg;
+    }
+
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+#modalAskForm {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 1rem;
+    width: 20rem;
+    border: 0;
+    outline: 0;
+
+    &::backdrop {
+        background-color: rgb(var(--clr-min) / .75);
+    }
 }
 
 /* _mainPage.scss */
