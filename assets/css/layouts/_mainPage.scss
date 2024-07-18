@@ -161,4 +161,21 @@
     }
 }
 
+#modalHeader {
+    font-family: var(--ff-gothic-en);
+}
+
+#frmAsk {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5rem;
+    margin-block-start: 1rem;
+}
+
+#modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: .25rem;
+}
+
 /* _mainPage.scss */
