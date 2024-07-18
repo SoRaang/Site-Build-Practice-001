@@ -458,7 +458,7 @@ a:hover, a:focus, a:active {
 .inner-wrapper {
   margin-inline: auto;
   padding-inline: 0.4rem;
-  width: min(100%, 64rem);
+  width: min(100% - 1rem, 64rem);
 }
 
 /* _commons.scss */
@@ -761,6 +761,16 @@ a:hover, a:focus, a:active {
   gap: 0.25rem;
 }
 
+@media screen and (max-width: 1024px) {
+  #heroParagraph {
+    margin-inline-end: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #sideBooklet {
+    inset-block-end: 3rem;
+  }
+}
 /* _mainPage.scss */
 /* _subPages.scss */
 /* _subPages.scss */

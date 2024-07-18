@@ -178,4 +178,15 @@
     gap: .25rem;
 }
 
+@media screen and (max-width: 1024px) {
+    #heroParagraph {
+        margin-inline-end: auto;
+        width: fit-content;
+    }
+
+    #sideBooklet {
+        inset-block-end: 3rem;
+    }
+}
+
 /* _mainPage.scss */
